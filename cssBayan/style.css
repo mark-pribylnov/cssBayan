@@ -24,7 +24,7 @@ img {
   /* Prevent images from stretching more than their actual size */
 }
 
-input[type='checkbox'] {
+input[type='radio'] {
   display: none;
 }
 
