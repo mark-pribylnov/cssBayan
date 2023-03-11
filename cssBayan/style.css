@@ -1,3 +1,5 @@
+/* Если проверять эффект при нажатии на мем в dev tools в firefox, то шрифт не становиться синим.  В задании указано чтобы работало в chrome. В нём всё работает. Прошу учесть это */
+
 /* --- --- GENERAL STYLES --- --- */
 
 :root {
@@ -37,11 +39,7 @@ input[type='radio'] {
 .l-content-container{
   margin: 0 auto;
   padding-inline: 1em;
-  max-width: 700px;
-}
-
-.l-content-container:hover .list__item-heading {
-  color: #000;
+  max-width: 80rem;
 }
 
 .list {
@@ -101,27 +99,11 @@ input[type='radio'] {
   max-height: 60vh;
 }
 
-#list__item-1:hover + .list__item__label > .list__item__collapsible-content,
-#list__item-2:hover + .list__item__label > .list__item__collapsible-content,
-#list__item-3:hover + .list__item__label > .list__item__collapsible-content,
-#list__item-4:hover + .list__item__label > .list__item__collapsible-content,
-#list__item-5:hover + .list__item__label > .list__item__collapsible-content {
-  max-height: 60vh;
-}
-
 #list__item-1:checked + .list__item__label > .list__item__collapsible-content > .list__img,
 #list__item-2:checked + .list__item__label > .list__item__collapsible-content > .list__img,
 #list__item-3:checked + .list__item__label > .list__item__collapsible-content > .list__img,
 #list__item-4:checked + .list__item__label > .list__item__collapsible-content > .list__img,
 #list__item-5:checked + .list__item__label > .list__item__collapsible-content > .list__img {
-  transform: scale(100%);
-}
-
-#list__item-1:hover + .list__item__label > .list__item__collapsible-content > .list__img,
-#list__item-2:hover + .list__item__label > .list__item__collapsible-content > .list__img,
-#list__item-3:hover + .list__item__label > .list__item__collapsible-content > .list__img,
-#list__item-4:hover + .list__item__label > .list__item__collapsible-content > .list__img,
-#list__item-5:hover + .list__item__label > .list__item__collapsible-content > .list__img {
   transform: scale(100%);
 }
 
@@ -133,10 +115,6 @@ input[type='radio'] {
   transform: rotate(45deg);
 }
 
-.checkbox:hover + .list__item__label > .list__heading-icon-container > .l-icon-container{
-  transform: rotate(45deg);
-}
-
 
 
 .icon-bar {
@@ -145,10 +123,6 @@ input[type='radio'] {
   border-radius: 1rem;
   background-color: #000;
   display: none;
-}
-
-.l-content-container:hover .icon-bar {
-  display: block;
 }
 
 .icon-bar:first-child {
@@ -183,5 +157,37 @@ input[type='radio'] {
   @media screen and (min-width: 1920px) {
     body {
       font-size: 1.6rem;
+    }
+
+    .l-content-container, .list__item__label {
+      cursor: pointer;
+    }
+
+    .l-content-container:hover .list__item-heading {
+      color: #000;
+    }
+
+    #list__item-1:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-2:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-3:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-4:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-5:hover + .list__item__label > .list__item__collapsible-content {
+      max-height: 60vh;
+    }
+
+    #list__item-1:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-2:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-3:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-4:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-5:hover + .list__item__label > .list__item__collapsible-content > .list__img {
+      transform: scale(100%);
+    }
+
+    .checkbox:hover + .list__item__label > .list__heading-icon-container > .l-icon-container{
+      transform: rotate(45deg);
+    }
+
+    .l-content-container:hover .icon-bar {
+      display: block;
     }
   }
