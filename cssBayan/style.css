@@ -37,7 +37,7 @@ input[type='checkbox'] {
 .l-content-container{
   margin: 0 auto;
   padding-inline: 1em;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 .l-content-container:hover .list__item-heading {
@@ -79,13 +79,18 @@ input[type='checkbox'] {
 }
 
 .l-icon-container {
-  transition: .5s;
+  transition: .3s;
 }
 
 .list__item__collapsible-content {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height .5s ease-in-out;
+  transition: max-height .3s ease-in-out;
+}
+
+.list__img {
+  transform: scale(0);
+  transition: .3s ease-in-out;
 }
 
 #list__item-1:checked + .list__item__label > .list__item__collapsible-content,
@@ -101,7 +106,23 @@ input[type='checkbox'] {
 #list__item-3:hover + .list__item__label > .list__item__collapsible-content,
 #list__item-4:hover + .list__item__label > .list__item__collapsible-content,
 #list__item-5:hover + .list__item__label > .list__item__collapsible-content {
-  max-height: 100vh;
+  max-height: 60vh;
+}
+
+#list__item-1:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-2:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-3:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-4:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-5:checked + .list__item__label > .list__item__collapsible-content > .list__img {
+  transform: scale(100%);
+}
+
+#list__item-1:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-2:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-3:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-4:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-5:hover + .list__item__label > .list__item__collapsible-content > .list__img {
+  transform: scale(100%);
 }
 
 .checkbox:checked + label > div > h3 {
