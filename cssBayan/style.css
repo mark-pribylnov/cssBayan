@@ -1,0 +1,193 @@
+/* Если проверять эффект при нажатии на мем в dev tools в firefox, то шрифт не становиться синим.  В задании указано чтобы работало в chrome. В нём всё работает. Прошу учесть это */
+
+/* --- --- GENERAL STYLES --- --- */
+
+:root {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  background-color: #F6F6EC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  /* Prevent images from stretching more than their actual size */
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+
+
+  /* --- --- BASIC STYLES --- --- */
+
+
+
+.l-content-container{
+  margin: 0 auto;
+  padding-inline: 1em;
+  max-width: 80rem;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list__heading-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list__item__label {
+  border-top: 1px solid #D2D9E2;
+  text-align: center;
+  display: block;
+}
+
+.list__item__label:active {
+  opacity: 0.5;
+}
+
+.list__item__label:active .list__item-heading {
+  color: #0059D9;
+}
+
+.list__item__label:active .icon-bar {
+  background-color: #0059D9;
+}
+
+.list__item-heading {
+  color: #0059D9;
+}
+
+.l-icon-container {
+  transition: .3s;
+}
+
+.list__item__collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
+}
+
+.list__img {
+  transform: scale(0);
+  transition: .3s ease-in-out;
+}
+
+#list__item-1:checked + .list__item__label > .list__item__collapsible-content,
+#list__item-2:checked + .list__item__label > .list__item__collapsible-content,
+#list__item-3:checked + .list__item__label > .list__item__collapsible-content,
+#list__item-4:checked + .list__item__label > .list__item__collapsible-content,
+#list__item-5:checked + .list__item__label > .list__item__collapsible-content {
+  max-height: 60vh;
+}
+
+#list__item-1:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-2:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-3:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-4:checked + .list__item__label > .list__item__collapsible-content > .list__img,
+#list__item-5:checked + .list__item__label > .list__item__collapsible-content > .list__img {
+  transform: scale(100%);
+}
+
+.checkbox:checked + label > div > h3 {
+  color: #000;
+}
+
+.checkbox:checked + .list__item__label > .list__heading-icon-container > .l-icon-container{
+  transform: rotate(45deg);
+}
+
+
+
+.icon-bar {
+  width: 2rem;
+  height: 0.3rem;
+  border-radius: 1rem;
+  background-color: #000;
+  display: none;
+}
+
+.icon-bar:first-child {
+  transform: rotate(90deg)
+}
+
+.icon-bar:last-child {
+  transform: translateY(-100%)
+}
+
+
+
+
+
+
+  /* --- --- MEDIA QUERIES --- --- */
+
+
+
+  @media screen and (min-width: 320px) {
+    body {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (min-width: 820px) {
+    body {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    body {
+      font-size: 1.6rem;
+    }
+
+    .l-content-container, .list__item__label {
+      cursor: pointer;
+    }
+
+    .l-content-container:hover .list__item-heading {
+      color: #000;
+    }
+
+    #list__item-1:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-2:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-3:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-4:hover + .list__item__label > .list__item__collapsible-content,
+    #list__item-5:hover + .list__item__label > .list__item__collapsible-content {
+      max-height: 60vh;
+    }
+
+    #list__item-1:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-2:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-3:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-4:hover + .list__item__label > .list__item__collapsible-content > .list__img,
+    #list__item-5:hover + .list__item__label > .list__item__collapsible-content > .list__img {
+      transform: scale(100%);
+    }
+
+    .checkbox:hover + .list__item__label > .list__heading-icon-container > .l-icon-container{
+      transform: rotate(45deg);
+    }
+
+    .l-content-container:hover .icon-bar {
+      display: block;
+    }
+  }
